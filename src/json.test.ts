@@ -143,6 +143,11 @@ describe('parseJSON', () => {
       expect(parseJSON('-1.2e+34')).toBe(-1.2e34);
       expect(parseJSON('-1.2e-34')).toBe(-1.2e-34);
     });
+
+    it('supports custom handler for numbers', () => {
+      const handleNumber = (str: string) => 'number:' + str;
+      expect(parseJson('1.2e-3', { handleNumber })).toBe('number:1.2e-3');
+    });
   });
 
   describe('array', () => {

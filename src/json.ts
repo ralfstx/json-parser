@@ -1,4 +1,8 @@
-export function parseJSON(input: string) {
+export type ParseOpts = {
+  handleNumber: (input: string) => unknown;
+};
+
+export function parseJSON(input: string, opts?: ParseOpts) {
   let pos = 0;
 
   const value = parseValue();
@@ -38,7 +42,8 @@ export function parseJSON(input: string) {
     }
     readFraction();
     readExponent();
-    return parseFloat(input.substring(start, pos));
+    const str = input.substring(start, pos);
+    return opts?.handleNumber ? opts.handleNumber(str) : parseFloat(str);
   }
 
   function readFraction() {
