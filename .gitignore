@@ -1,0 +1,19 @@
+# VSCode
+*.code-workspace
+
+# dependencies
+node_modules/
+
+# build output
+dist/
+coverage/
+*.tgz
+
+# temp and local files
+*~
+*.local
+.DS_Store
+.eslintcache
+
+# log files
+npm-debug.log*

@@ -1,0 +1,15 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+  ],
+  "eslint.rules.customizations": [
+    { "rule": "*", "severity": "warn" }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true
+}
